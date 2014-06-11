@@ -831,7 +831,7 @@ define method http-request
           read-response-body?,
           stream)
  => (response :: <http-response>)
-  http-request(parse-uri(url),
+  http-request(parse-url(url),
                request-method,
                headers: headers,
                parameters: parameters,
@@ -842,7 +842,7 @@ define method http-request
 end method http-request;
 
 define method http-request
-    (url :: <uri>,
+    (url :: <url>,
      request-method :: <request-method>,
      #key headers,
           parameters :: false-or(<string-table>),
